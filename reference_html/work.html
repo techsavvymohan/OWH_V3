@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work — OnlyWayOnline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121212; --paper:#F1EFE7; --yellow:#FFE100; --pink:#FF3B6E; --cobalt:#2233FF;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;}
+h1,h2,h3,.display{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;margin:0;}
+a{color:inherit}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;
+    padding:18px 6vw;background:var(--paper);border-bottom:3px solid var(--ink);flex-wrap:wrap;gap:10px;}
+.logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.25rem;text-decoration:none;}
+.logo span{background:var(--ink);color:var(--paper);padding:0 6px;}
+.navlinks{display:flex;gap:1.6rem;align-items:center;font-weight:600;font-size:.92rem;flex-wrap:wrap;}
+.navlinks a{text-decoration:none;padding:4px 2px;border-bottom:2px solid transparent;}
+.navlinks a:hover,.navlinks a.active{border-bottom:2px solid var(--ink);}
+.nav-cta{background:var(--cobalt);color:var(--paper);padding:9px 16px;border-radius:999px;font-weight:600;font-size:.85rem;text-decoration:none;
+          border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);white-space:nowrap;}
+
+.page-hero{padding:6vw 6vw 4vw;}
+.page-hero .eyebrow{display:inline-block;background:var(--yellow);border:2px solid var(--ink);border-radius:999px;
+      padding:4px 14px;font-weight:700;font-size:.8rem;margin-bottom:1.2rem;transform:rotate(-1deg);}
+.page-hero h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:0.98;max-width:16ch;}
+.page-hero p{max-width:46ch;font-size:1.05rem;line-height:1.55;margin-top:1.3rem;}
+
+.marquee{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);background:var(--ink);color:var(--paper);
+         padding:14px 0;overflow:hidden;white-space:nowrap;}
+.marquee-track{display:inline-block;animation:scroll 26s linear infinite;font-family:'Bricolage Grotesque';font-weight:700;font-size:1.3rem;}
+.marquee-track span{margin-right:2.2em;}
+.marquee-track span.pink{color:var(--pink)} .marquee-track span.yellow{color:var(--yellow)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+section{padding:6vw 6vw;}
+section.tight{padding-top:0;}
+.section-head{max-width:44ch;margin-bottom:2.6rem;}
+.section-head h2{font-size:clamp(1.9rem,4.2vw,3rem);}
+.section-head p{margin-top:.8rem;font-size:1rem;line-height:1.5;color:#333;}
+
+.card{border:2px solid var(--ink);padding:1.6rem 1.4rem;position:relative;background:var(--paper);
+      transition:transform .18s ease, box-shadow .18s ease;}
+.card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink);}
+.card .num{position:absolute;top:-14px;right:14px;background:var(--yellow);border:2px solid var(--ink);
+           border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;
+           font-family:'Bricolage Grotesque';font-weight:800;font-size:.85rem;}
+.card h3{font-size:1.15rem;margin-bottom:.5rem;}
+.card p{font-size:.9rem;line-height:1.45;margin:0;color:#333;}
+.tilt-l{transform:rotate(-1deg);} .tilt-r{transform:rotate(1deg);}
+.tilt-l:hover{transform:rotate(-1deg) translate(-3px,-3px);} .tilt-r:hover{transform:rotate(1deg) translate(-3px,-3px);}
+
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;}
+
+.proof{background:var(--cobalt);color:var(--paper);display:grid;grid-template-columns:repeat(4,1fr);
+       gap:2rem;clip-path:polygon(0 3%,100% 0,100% 97%,0 100%);}
+.proof .stat b{font-family:'Bricolage Grotesque';font-size:clamp(2.1rem,4vw,3.2rem);display:block;}
+.proof .stat p{margin:.3rem 0 0;font-size:.88rem;opacity:.85;}
+
+.tag{display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600;
+     font-size:.85rem;margin:0 .5rem .6rem 0;}
+.tag.pink{background:var(--pink);color:var(--paper);}
+.tag.yellow{background:var(--yellow);}
+
+.cta{padding:8vw 6vw;text-align:center;}
+.cta h2{font-size:clamp(2rem,5.6vw,4rem);max-width:20ch;margin:0 auto 2rem;}
+.cta-btn{display:inline-block;background:var(--yellow);border:3px solid var(--ink);border-radius:999px;
+         padding:1rem 2.4rem;font-family:'Bricolage Grotesque';font-weight:800;font-size:1.05rem;
+         text-decoration:none;color:var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .15s;}
+.cta-btn:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--ink);}
+.cta-btn.alt{background:var(--paper);border-width:2px;box-shadow:4px 4px 0 var(--ink);}
+
+footer{border-top:3px solid var(--ink);padding:2rem 6vw;display:flex;justify-content:space-between;
+       flex-wrap:wrap;gap:1rem;font-size:.85rem;}
+
+.field{margin-bottom:1.2rem;}
+.field label{display:block;font-weight:600;font-size:.85rem;margin-bottom:.4rem;}
+.field input,.field textarea,.field select{width:100%;border:2px solid var(--ink);background:var(--paper);
+     padding:.75rem .9rem;font-family:'Inter';font-size:.95rem;border-radius:8px;color:var(--ink);}
+.field textarea{resize:vertical;min-height:110px;}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3vw;align-items:start;}
+.contact-info .row{display:flex;gap:1rem;margin-bottom:1.4rem;font-size:.98rem;}
+.contact-info .row b{font-family:'Bricolage Grotesque';display:block;font-size:1rem;}
+
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--ink);}
+.process .step{padding:1.6rem 1.3rem;border-right:2px solid var(--ink);}
+.process .step:last-child{border-right:none;}
+.process .step b{font-family:'Bricolage Grotesque';font-size:1.6rem;display:block;color:var(--pink);}
+.process .step h3{font-size:1rem;margin:.4rem 0 .5rem;}
+.process .step p{font-size:.85rem;color:#333;line-height:1.4;margin:0;}
+
+.timeline{border-left:2px solid var(--ink);margin-left:1rem;}
+.timeline .item{position:relative;padding:0 0 2.2rem 2rem;}
+.timeline .item::before{content:"";position:absolute;left:-9px;top:2px;width:16px;height:16px;border-radius:50%;
+      background:var(--yellow);border:2px solid var(--ink);}
+.timeline .item b{font-family:'Bricolage Grotesque';display:block;font-size:1.05rem;margin-bottom:.2rem;}
+.timeline .item p{margin:0;font-size:.92rem;color:#333;line-height:1.5;}
+
+.quote{border:2px solid var(--ink);border-left:8px solid var(--pink);padding:1.8rem;background:var(--paper);}
+.quote p{font-family:'Bricolage Grotesque';font-size:1.3rem;font-weight:600;line-height:1.4;margin:0;}
+.quote cite{display:block;margin-top:1rem;font-style:normal;font-size:.85rem;font-weight:600;color:#333;}
+
+.faq details{border-bottom:2px solid var(--ink);padding:1.1rem 0;}
+.faq summary{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.05rem;cursor:pointer;list-style:none;
+     display:flex;justify-content:space-between;align-items:center;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";font-size:1.4rem;color:var(--pink);}
+.faq details[open] summary::after{content:"–";}
+.faq p{margin:.8rem 0 0;font-size:.92rem;line-height:1.55;color:#333;max-width:65ch;}
+
+.compare{border:2px solid var(--ink);}
+.compare .row{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-top:2px solid var(--ink);}
+.compare .row:first-child{border-top:none;background:var(--ink);color:var(--paper);font-weight:700;}
+.compare .row > div{padding:.9rem 1rem;font-size:.9rem;border-left:2px solid var(--ink);}
+.compare .row > div:first-child{border-left:none;text-align:left;}
+.compare .row:not(:first-child) > div:not(:first-child){text-align:center;}
+
+@media (max-width:760px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr 1fr;}
+  .proof{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .navlinks{display:none;}
+  .process{grid-template-columns:1fr 1fr;}
+  .process .step{border-bottom:2px solid var(--ink);}
+  .compare .row{grid-template-columns:1.2fr .9fr .9fr;font-size:.8rem;}
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#121212;--ink:#F1EFE7;}
+  :root:not([data-theme="light"]) .marquee{background:var(--ink);color:var(--paper);}
+  :root:not([data-theme="light"]) .nav-cta{color:var(--ink);}
+  :root:not([data-theme="light"]) .compare .row:first-child{background:var(--paper);color:var(--ink);}
+  :root:not([data-theme="light"]) .field input,
+  :root:not([data-theme="light"]) .field textarea,
+  :root:not([data-theme="light"]) .field select{color:var(--ink);}
+}
+:root[data-theme="dark"]{--paper:#121212;--ink:#F1EFE7;}
+</style>
+</head>
+<body>
+<nav>
+<a class="logo" href="https://claude.ai/artifact/VR17NsrHFy3WB524SmTxVL"><span>OWO</span> OnlyWayOnline</a>
+<div class="navlinks">
+<a href="https://claude.ai/artifact/VR17NsrHFy3WB524SmTxVL">HOME</a>
+<a href="https://claude.ai/artifact/YYWadvMBVDPt1mKapRC6ii">SERVICES</a>
+<a href="https://claude.ai/artifact/KnoP1rEyLpBzydy9nHCHaM" class="active">WORK</a>
+<a href="https://claude.ai/artifact/PYETdmkkf27QbR7xi6JzUn">ABOUT</a>
+<a href="https://claude.ai/artifact/RwqviNutetNQtASHdGEzd9">CONTACT</a>
+</div>
+<a class="nav-cta" href="https://claude.ai/artifact/RwqviNutetNQtASHdGEzd9">Start a project</a>
+</nav>
+
+<section class="page-hero">
+  <span class="eyebrow">SELECTED WORK</span>
+  <h1>A few problems we've actually solved.</h1>
+  <p>Illustrative examples of the kind of work we do — swap these for your real case studies, results and client names when you're ready to publish.</p>
+</section>
+
+<section class="proof">
+  <div class="stat"><b>6</b><p>industries worked in</p></div>
+  <div class="stat"><b>3x</b><p>average paid-media efficiency gain*</p></div>
+  <div class="stat"><b>40+</b><p>creator partnerships run</p></div>
+  <div class="stat"><b>*</b><p>illustrative — replace with real figures</p></div>
+</section>
+
+<section class="tight">
+  <div class="grid-2">
+    <div class="card tilt-l">
+      <div class="num">01</div>
+      <h3>D2C Skincare Brand</h3>
+      <p>Rebuilt the paid funnel and launched a creator seeding program in parallel. Result: lower cost per acquisition and a waitlist of creators asking to work with the brand instead of the other way round.</p>
+      <div style="margin-top:1rem;"><span class="tag yellow">Performance</span><span class="tag pink">Influencers</span></div>
+    </div>
+    <div class="card tilt-r">
+      <div class="num">02</div>
+      <h3>Fintech Startup</h3>
+      <p>Brand didn't exist beyond a logo. Built the positioning, voice and visual system, then launched it through a coordinated paid and organic push.</p>
+      <div style="margin-top:1rem;"><span class="tag yellow">Brand Building</span><span class="tag pink">Content</span></div>
+    </div>
+    <div class="card tilt-r">
+      <div class="num">03</div>
+      <h3>Regional F&amp;B Chain</h3>
+      <p>Replaced a scattered social presence with one content system across every location, plus an always-on local paid strategy.</p>
+      <div style="margin-top:1rem;"><span class="tag yellow">Content</span><span class="tag pink">Performance</span></div>
+    </div>
+    <div class="card tilt-l">
+      <div class="num">04</div>
+      <h3>SaaS Tool for Creators</h3>
+      <p>Used the product's own audience of creators as its influencer channel — the cheapest, most credible marketing it ever ran.</p>
+      <div style="margin-top:1rem;"><span class="tag yellow">Influencers</span><span class="tag pink">SEO</span></div>
+    </div>
+    <div class="card tilt-l">
+      <div class="num">05</div>
+      <h3>Home Insurance Comparison Platform</h3>
+      <p>Rebuilt landing pages and bid strategy across search and social, aligning creative testing with what actually converted, not just what got clicks.</p>
+      <div style="margin-top:1rem;"><span class="tag yellow">Performance</span><span class="tag pink">Conversion</span></div>
+    </div>
+    <div class="card tilt-r">
+      <div class="num">06</div>
+      <h3>Direct-to-Consumer Furniture Brand</h3>
+      <p>Email and CRM flows layered on top of existing paid traffic, turning one-time buyers into a repeat-purchase list within two quarters.</p>
+      <div style="margin-top:1rem;"><span class="tag yellow">Email &amp; CRM</span><span class="tag pink">Retention</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="grid-2">
+    <div class="quote">
+      <p>"They rebuilt our funnel and our brand voice in the same sprint. Everything finally sounds like one company."</p>
+      <cite>— Founder, Fintech Startup (illustrative)</cite>
+    </div>
+    <div class="quote">
+      <p>"First agency that treated creator marketing like a real channel instead of a favour to a friend."</p>
+      <cite>— Growth Lead, SaaS Tool (illustrative)</cite>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Want results like this for your brand?</h2>
+  <a class="cta-btn" href="https://claude.ai/artifact/RwqviNutetNQtASHdGEzd9">Start a project →</a>
+</section>
+
+<footer>
+  <div>OnlyWayOnline © 2026</div>
+  <div>hello@onlywayonline.com</div>
+</footer>
+</body>
+</html>
